@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do Items</title>
+    <title>Planeación en Equipo</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
     
     <style>
         body {
-            background-color: #FAFAFA;
+            background-color: #FFE79B;
             font-family: 'Nunito', sans-serif;
             padding-top: 50px;
         }
@@ -36,8 +36,9 @@
             max-width: 550px;
             margin: auto;
             background-color: #FFF;
-            -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+            -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.861);
             box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+            border-radius: 25px 25px 25px 25px;
         }
 
         .header-bar {
@@ -45,14 +46,15 @@
             justify-content: space-between;
             color: #fff;
             padding: 10px;
-            border-radius: 5px 5px 0 0;
-            background: linear-gradient(90deg, #BEADFA 0%, #D0BFFF 43%, #DFCCFB 100%);
+            border-radius: 25px 25px 0 0;
+            background: linear-gradient(90deg, #9376E0 0%, #E893CF 43%, #F3BCC8 100%);
         }
 
         .header-bar a {
             color: rgb(247, 247, 247);
             text-decoration: none;
         }
+
 
         .task-wrapper {
             display: flex;
@@ -61,11 +63,13 @@
             background-color: #fff;
             border-top: 1px solid #dfe4ea;
             overflow: hidden;
+            border-radius: 0 0 25px 25px;
         }
 
         .task-title {
             display: flex;
             padding: 20px;
+            border-radius: 0 0 25px 25px;
         }
 
         .task-title a {

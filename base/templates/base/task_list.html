@@ -3,8 +3,8 @@
 
     <div class="header-bar">
         <div>
-            <h1>Hello, {{request.user|title }}</h1>
-            <h3 style="margin:0">You have <i>{{count}}</i> incomplete task{{ count|pluralize:"s" }}</h3>
+            <h1>Hola, {{request.user|title }}</h1>
+            <h3 style="margin:0">Tienen <i>{{count}}</i>   tarea{{ count|pluralize:"s" }} sin completar </h3>
         </div>
 
         {% if request.user.is_authenticated %}
@@ -13,14 +13,11 @@
             <a href="{% url 'login' %}">Login</a>
         {% endif %}
     </div>
-    
-
-    <h1>My to do list {{ color }}</h1>
 
     <div id="search-add-wrapper">
         <form method="GET" style="margin-top: 20px; display: flex;">
             <input type="text" name="search-area" value="{{ search_input }}">
-            <input type="submit" value="Search" class="button">
+            <input type="submit" value="Buscar" class="button">
         </form>
         <a id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
     </div>
@@ -45,9 +42,11 @@
             <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
             {% endif %}
         </div>
-
         {% empty %}
-        <h3>No items in list</h3>
+        <div style="text-align: center; padding-bottom: 10px; line-height: 1em;">
+            <h3>Aún no tienen tareas agregadas.</h3>
+            <h3>Crea una <a href="{% url 'task-create' %}" style="text-decoration: none; color: #e53935; ">Nueva tarea</a>!</h3>
+        </div>
         {% endfor %}
     </div>
 {% endblock content %}

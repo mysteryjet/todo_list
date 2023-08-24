@@ -10,6 +10,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 
+#form customizada
+# from .forms import CustomAuthenticationForm
+
 from .models import Task
 
 # vista para login
@@ -17,6 +20,8 @@ class CustomLoginView(LoginView):
     template_name = 'base/login.html'
     fields = '__all__'
     redirect_authenticated_user = True
+    #parte de form customizado para cambiar el nombre de username y passworda terminos en español
+    # authentication_form = CustomAuthenticationForm
 
     def get_success_url(self):
         return reverse_lazy('tasks')
@@ -76,7 +81,7 @@ class TaskCreate(LoginRequiredMixin, CreateView):
 # esta vista es para Actualizar una task
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
-    fields = {'complete', 'description', 'title'}
+    fields = {'title', 'description', 'complete'}
     success_url = reverse_lazy('tasks')
 
 

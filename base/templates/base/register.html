@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="header-bar">
-    <h1>Register</h1>
+    <h1>Registro</h1>
 </div>
     
 <div class="card-body">
@@ -16,9 +16,9 @@
 
         <label>{{ form.password2.label }}</label>
         {{form.password2}}
-        <input style="margin-top: 10px;" class="button" type="submit" value="Register">
+        <input style="margin-top: 10px;" class="button" type="submit" value="Registrarse">
     </form>
-    <p>Already have an account? <a href="{% url 'login' %}">Login</a> </p>
+    <p>Ya tienes una cuenta? <a href="{% url 'login' %}">Login</a> </p>
 </div>
     
 {% endblock content %}

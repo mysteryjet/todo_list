@@ -2,15 +2,25 @@
 {% block content %}
 
 <div class="header-bar">
-    <a href="{% url 'tasks' %}">&#8592; Back</a>
+    <a href="{% url 'tasks' %}">&#8592; Regresar</a>
 </div>
 
 
 <div class="card-body">
     <form action="" method="POST">
         {% csrf_token %}    
-        {{ form.as_p }}
-        <input class="button" type="submit" value="Submit">        
+        <!-- {{ form.as_p }} -->
+
+        <label>Nombre de la tarea</label>
+        {{form.title}}
+
+        <label>Descripción</label>
+        {{form.description }}
+
+        <label>Completada</input>
+        {{form.complete}}
+
+        <input style="margin-top: 10px;" class="button" type="submit" value="Agregar">        
     </form> 
 </div>
 
